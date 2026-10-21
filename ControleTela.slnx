@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ControleTela.Console/ControleTela.Console.csproj" />
+  <Project Path="ControleTela.Core/ControleTela.Core.csproj" />
+  <Project Path="ControleTela/ControleTela.csproj" />
+</Solution>
