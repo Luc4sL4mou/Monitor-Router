@@ -6,6 +6,38 @@
 
 Aplicativo para Windows 11 (C# / .NET 10 / WPF) que ajusta **brilho, contraste, gama, cor (R/G/B) e temperatura de cor de cada monitor ou TV de forma independente**, com visual Fluent (WPF-UI) no estilo das Configurações do Windows 11.
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="Tela principal do Monitor Router" width="640">
+</p>
+
+## Veja em ação
+
+### 1. Escolha o monitor no mapa
+
+O mapa mostra os monitores na posição real, como em *Configurações > Sistema > Tela*. Clique em um deles e **todos os controles passam a valer só para ele**. O botão **Identificar** mostra o número grande em cada tela por 2 segundos.
+
+<p align="center">
+  <img src="docs/demo-mapa.gif" alt="Selecionando monitores no mapa" width="640">
+</p>
+
+### 2. Ajuste em tempo real
+
+Brilho, contraste, gama, vermelho, verde, azul e temperatura de cor. O ajuste é aplicado **enquanto você arrasta** o slider, e os valores ficam dentro de faixas seguras, porque o Windows recusa curvas muito extremas.
+
+<p align="center">
+  <img src="docs/demo-ajustes.gif" alt="Ajustando brilho, contraste, cor e temperatura" width="640">
+</p>
+
+> Os GIFs mostram a interface. A mudança de cor em si acontece na saída da placa de vídeo, depois da imagem que o Windows entrega ao capturador de tela, então ela só aparece no seu monitor de verdade.
+
+### 3. Redefinir, copiar e perfis
+
+Mais abaixo na janela: **Redefinir** (um monitor ou todos), **Copiar configuração** de um monitor para outro (ou para todos os outros), **Perfis** nomeados como "Jogo", "Leitura" ou "Noite", e a opção de iniciar com o Windows.
+
+<p align="center">
+  <img src="docs/demo-tela-completa.gif" alt="Percorrendo todas as opções do aplicativo" width="640">
+</p>
+
 ## Como funciona
 
 O app usa a **Gamma Ramp** da placa de vídeo: uma tabela de 256 entradas por canal (R, G, B), com valores de 0 a 65535, que o driver aplica ao sinal enviado ao monitor. Como o ajuste é feito no sinal da GPU, funciona em qualquer monitor ou TV ligado por HDMI/DisplayPort.
@@ -30,7 +62,8 @@ A rampa é aplicada em **um** monitor por vez: `CreateDC("DISPLAY", deviceName)`
 - **Copiar configuração** para outro monitor ou para todos os outros
 - **Perfis** nomeados (ex.: "Jogo", "Leitura", "Noite"), salvos em `%AppData%\ControleTela`
 - Reaplica os ajustes quando os monitores mudam (`DisplaySettingsChanged`)
-- Ícone na bandeja e opção de iniciar com o Windows (desligada por padrão)
+- Ícone na bandeja (minimizar mantém os ajustes ativos) e opção de iniciar com o Windows (desligada por padrão)
+- A janela se adapta ao tamanho do monitor onde abre (inclusive telas de 768 px de altura)
 - Restaura as cores originais ao fechar
 - Avisos de HDR ativo, Luz noturna ligada e ajustes recusados pelo Windows
 
