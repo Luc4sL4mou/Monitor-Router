@@ -94,6 +94,16 @@ dotnet publish ControleTela -c Release -r win-x64 --self-contained true `
 
 O resultado é `publish\MonitorRouter.exe`.
 
+## Desenvolvido com IA
+
+Este projeto foi construído em parceria com a IA, usando o **[Claude Code](https://claude.com/claude-code) dentro do VS Code** (modelos Claude Sonnet 5.5 e Claude Opus 5.5, da Anthropic).
+
+- **Direção e decisões:** Lucas definiu o que o app deveria fazer, a arquitetura (Gamma Ramp por monitor), o visual no estilo Windows 11, o nome e a identidade visual, e testou tudo nos próprios monitores.
+- **Contribuição da IA:** escreveu o código C#/XAML, explicou cada etapa para fins de aprendizado, compilou, publicou e capturou a tela do app para conferir o resultado, gravou os GIFs deste README e corrigiu bugs encontrados no caminho.
+- **Registro:** os commits trazem o trailer `Co-Authored-By: Claude`, então a colaboração aparece no histórico do GitHub.
+
+A ideia foi aprender trabalhando: cada etapa foi explicada enquanto era implementada, e o resultado é um projeto real e funcional.
+
 ## Se algum monitor não responder
 
 - **"Não foi possível ajustar":** o Windows recusa curvas muito extremas. Use valores menos extremos.
